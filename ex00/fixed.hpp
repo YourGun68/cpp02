@@ -7,19 +7,15 @@
 class Fixed
 {
 private:
-	/* data */
+	int					_nbr;
+	static int	_bits;
 public:
-	Fixed(/* args */);
+	Fixed();
+	Fixed(Fixed const &ptr);
 	~Fixed();
+	Fixed&	operator=(Fixed const &ptr);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 };
-
-Fixed::Fixed(/* args */)
-{
-}
-
-Fixed::~Fixed()
-{
-}
-
 
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpeter <jpeter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,35 +12,23 @@
 
 #include "fixed.hpp"
 
-int Fixed::_bits = 8;
-
-Fixed::Fixed(): _nbr(0) {
-	std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
-}
-
-Fixed::Fixed(Fixed const &ptr) {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = ptr;
-}
-
-Fixed&	Fixed::operator=(Fixed const &ptr) {
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &ptr)
-		_nbr = ptr.getRawBits();
-	return *this;
-}
-
-int		Fixed::getRawBits(void) const
+int	main( void )
 {
-    std::cout << "getRawBits member function called" << std::endl;
-    return (this->_nbr);
-}
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
 
-void	Fixed::setRawBits(int const raw)
-{
-    this->_nbr = raw;
+	a = Fixed( 1234.4321f );
+
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	return 0;
 }
