@@ -13,13 +13,16 @@ private:
 	Fixed	_y;
 public:
 	Point();
-	Point(float const a, float const b);
+	Point(Fixed const x, Fixed const y);
 	Point(Point const &ptr);
 	~Point();
 
-	Point&	operator=(Point const &ptr);
+	Point&		operator=(Point const &ptr);
 
-	void	setter(Fixed const &x, Fixed const &y);
+	Fixed const	&getX() const;
+	Fixed const	&getY() const;
 };
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
