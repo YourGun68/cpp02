@@ -9,8 +9,8 @@
 class Point
 {
 private:
-	Fixed	_x;
-	Fixed	_y;
+	Fixed const	_x;
+	Fixed const	_y;
 public:
 	Point();
 	Point(Fixed const x, Fixed const y);

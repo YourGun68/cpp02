@@ -12,20 +12,8 @@
 
 #include "Point.hpp"
 
-int main(void)
-{
-	Point	point(15, 15);
-	Point	a(10, 10);
-	Point	b(20, 10);
-	Point	c(10, 20);
-
-	if (bsp(a, b, c, point) == 0) {
-		std::cout << "The point is in the triangle ABC" << std::endl;
-		return 0;	
-	}
-	else {
-		std::cout << "The point isn't in the triangle ABC" << std::endl;
-		return 1;
-	}
-	return 1;
+int	main(void) {
+	std::cout << std::boolalpha << \
+	bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(2, 2)) << std::endl << \
+	bsp(Point(0, 0), Point(0, 5), Point(5, 0), Point(0, -0.01f)) << std::endl;
 }
